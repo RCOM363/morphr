@@ -1,16 +1,18 @@
-export const MIME_TYPES = [
-  // Images
-  "image/x-citrix-jpeg",
-  "image/x-png",
+export const IMAGE_MIME_TYPES = [
+  "image/jpeg",
+  "image/png",
   "image/gif",
   "image/bmp",
   "image/tiff",
   "image/webp",
   "image/svg+xml",
   "image/x-icon",
+  "image/heic",
+  "image/heif",
   "image/vnd.adobe.photoshop",
+] as const;
 
-  // Documents / text
+export const DOCUMENT_MIME_TYPES = [
   "application/pdf",
   "application/msword",
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -35,4 +37,11 @@ export const MIME_TYPES = [
   "application/x-bzip2",
 ] as const;
 
+export const MIME_TYPES = [
+  ...IMAGE_MIME_TYPES,
+  ...DOCUMENT_MIME_TYPES,
+] as const;
+
+export type ImageMimeType = (typeof IMAGE_MIME_TYPES)[number];
+export type DocumentMimeType = (typeof DOCUMENT_MIME_TYPES)[number];
 export type MimeType = (typeof MIME_TYPES)[number];
