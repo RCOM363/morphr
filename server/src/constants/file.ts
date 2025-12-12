@@ -1,15 +1,23 @@
+/* ----- Supported mime types & their extentions ----- */
+
 export const IMAGE_MIME_TYPES = [
   "image/jpeg",
   "image/png",
-  "image/gif",
-  "image/bmp",
-  "image/tiff",
   "image/webp",
-  "image/svg+xml",
-  "image/x-icon",
-  "image/heic",
+  "image/gif",
+  "image/aviff",
+  "image/tiff",
   "image/heif",
-  "image/vnd.adobe.photoshop",
+] as const;
+
+export const IMAGE_EXTENSTIONS = [
+  "jpeg",
+  "png",
+  "webp",
+  "gif",
+  "avif",
+  "tiff",
+  "heif",
 ] as const;
 
 export const DOCUMENT_MIME_TYPES = [
@@ -37,11 +45,34 @@ export const DOCUMENT_MIME_TYPES = [
   "application/x-bzip2",
 ] as const;
 
+export const DOCUMENT_EXTENSTIONS = [
+  "pdf",
+  "doc",
+  "docx",
+  "xls",
+  "xlsx",
+  "ppt",
+  "pptx",
+  "txt",
+  "rtf",
+  "csv",
+  "epub",
+
+  // OpenDocument formats
+  "odt",
+  "ods",
+  "odp",
+] as const;
+
 export const MIME_TYPES = [
   ...IMAGE_MIME_TYPES,
   ...DOCUMENT_MIME_TYPES,
 ] as const;
 
 export type ImageMimeType = (typeof IMAGE_MIME_TYPES)[number];
+export type ImageExtention = (typeof IMAGE_EXTENSTIONS)[number];
+
 export type DocumentMimeType = (typeof DOCUMENT_MIME_TYPES)[number];
+export type DocumentExtention = (typeof DOCUMENT_EXTENSTIONS)[number];
+
 export type MimeType = (typeof MIME_TYPES)[number];
