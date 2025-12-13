@@ -5,6 +5,11 @@ export interface ConvertImageProps {
   outputFormat: ImageExtention;
 }
 
+export interface ConvertImagesProps {
+  images: Express.Multer.File[] | undefined;
+  outputFormatMap: Record<string, ImageExtention>;
+}
+
 export interface ConvertDocumentProps {
   document: Express.Multer.File | undefined;
   outputFormat: DocumentExtention;

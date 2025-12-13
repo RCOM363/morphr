@@ -14,6 +14,13 @@ router
   );
 
 router
+  .route("/convert-images")
+  .post(
+    upload.array("images"),
+    expressAsyncHandler(fileController.convertImages)
+  );
+
+router
   .route("/convert-document")
   .post(
     upload.single("document"),
